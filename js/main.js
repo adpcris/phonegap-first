@@ -13,9 +13,32 @@ var app = {
         });
     },
 
+/* the next function is commented to keep it clean and use the following one to test the alert messages */
+/*
     initialize: function() {
-        this.store = new MemoryStore();
+        var self = this;
+        this.store = new MemoryStore(function() {
+            self.showAlert('Store Initialized', 'Info');
+        });
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
+    }
+*/
+    initialize: function() {
+
+        var self = this;/* added */
+        this.store = new MemoryStore(function(){
+            self.showAlert('Yeah man the Store is Initialized', 'Info');/* added */
+        });
+
+        $('.search-key').on('keyup', $.proxy(this.findByName, this));
+    },
+
+    showAlert: function (message, title) {
+        if (navigator.notification) {
+            navigator.notification.alert(message, null, title, 'OK');
+        } else {
+            alert(title ? (title + ": " + message) : message);
+        }
     }
 
 };
