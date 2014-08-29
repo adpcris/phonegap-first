@@ -1,0 +1,9 @@
+{
+    "lib": {
+        "www": {
+            "id": "directory.adp.cris",
+            "version": "1.1.0",
+            "uri": "https://github.com/adpcris/phonegap-first.git"
+        }
+    }
+}
