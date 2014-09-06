@@ -19,7 +19,7 @@ var app = {
             /* we compile the templates defined in the index.html */
             console.log('HOME_TPL_CRIS::'+$('#home-tpl').html());
             try{
-                this.homeTpl = Handlebars.compile($('#home-tpl').html());
+                app.prototype.homeTpl = Handlebars.compile($('#home-tpl').html());
                 this.employeeLiTpl = Handlebars.compile($('#employee-li-tpl').html());
             }catch(error){
                 console.log("CRIS_ERR:: "+error);
@@ -43,6 +43,7 @@ var app = {
      * to create a SINGLE PAGE APPLICATION which provides a more fluid experience for
      * the user and the possibility of using it off-line */
     renderHomeView: function(){
+        console.log("CRIS :: APP ::"+app.prototype.homeTpl);
         $('body').html(this.homeTpl());
         /* the following line is the one that actually calls the one that makes all
          the work of looking for the words that the user's typing in the input */
