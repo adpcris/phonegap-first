@@ -21,7 +21,6 @@ var app = {
             this.employeeLiTpl = Handlebars.compile($('#employee-li-tpl').html());
             /* we call the function to render the html */
             self.renderHomeView();
-
         });
 
         $('.search-key').on('keyup', $.proxy(this.findByName, this));
