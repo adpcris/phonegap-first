@@ -17,7 +17,7 @@ var app = {
             //self.showAlert('Yeah man the Store is Initialized', 'Info');/* added */
 
             /* we compile the templates defined in the index.html */
-            console.log('HOME_TPL_CRIS::'+$('#home-tpl').html());
+            console.log('HOME_TPL_CRISTINA::'+$('#home-tpl').html());
             try{
                 app.prototype.homeTpl = Handlebars.compile($('#home-tpl').html());
                 this.employeeLiTpl = Handlebars.compile($('#employee-li-tpl').html());
