@@ -1,14 +1,27 @@
 <html>
 <body>
+<!-- We don't need no html markups inside the body tag man!
+     We will render the html through the js, which rocks! -->
 
-<div class='header'><h1>Write a Name:</h1></div>
-<div class='search-view'>
-<input class='search-key' type="text"/>
-<ul class='employee-list'></ul>
-</div>
+<script id="home-tpl" type="text/x-handlebars-template">
+    <div class="header"><h1>Home</h1></div>
+    <div class="search-bar"><input class="search-key" type="text" /></div>
+    <ul class="employee-list"></ul>
+</script>
 
+<script id="employee-li-tpl" type="text/x-handlebars-template">
+    {{#.}}
+    <li><a href="#employees/{{this.id}}">{{this.firstName}} {{this.lastName}}<br/>{{this.title}}</a></li>
+    {{/.}}
+</script>
+
+<!-- phonegap is stored on the internet not in our app -->
 <script src="phonegap.js"></script>
 <script src="lib/jquery-1.8.2.min.js"></script>
+<!-- handlebars is a library that helps you with the tedious job of
+     creating the DOM through the javascripts. There are other
+     HTML template solutions like Mustache.js or Underscore.js -->
+<script src="lib/handelbars.js"></script>
 <script src="js/storage/memory-store.js"></script>
 <script src="js/main.js"></script>
 
